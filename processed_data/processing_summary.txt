@@ -1,0 +1,12 @@
+Processing completed on: 2025-05-12 01:55:51
+
+[OK] Saved cleaned rainfall data to processed_data\cleaned_rainfall_data.csv
+[OK] Saved administrative data to processed_data\admin_data.csv
+[OK] Successfully loaded admin boundaries: 68 regions
+[OK] Saved simplified boundaries to processed_data\simplified_boundaries.geojson
+[OK] Successfully extracted wealth metrics for 68 regions
+[OK] Saved wealth metrics to processed_data\wealth_metrics.csv
+[OK] Saved rainfall metrics to processed_data\rainfall_metrics.csv
+[OK] Handled missing values in unified dataset
+[OK] Saved unified dataset to processed_data\unified_dataset.csv
+[OK] Saved unified GeoJSON dataset to processed_data\unified_dataset.geojson
