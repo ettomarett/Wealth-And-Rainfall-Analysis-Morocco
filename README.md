@@ -65,7 +65,7 @@ The dashboard will open in your browser. Use the sidebar to navigate between dat
 - For errors about missing files, rerun `process_data.py` and check file paths.
 
 ## Credits
-- Developed by the Morocco Wealth-Rainfall Analysis Project Team
+- Developed by Omar Ettalbi
 - Data sources: [The Humanitarian Data Exchange](https://data.humdata.org/).
 
 ---
