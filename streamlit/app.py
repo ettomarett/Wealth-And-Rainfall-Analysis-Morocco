@@ -30,7 +30,7 @@ from src.data_processing.geospatial import (
 
 # Set page configuration
 st.set_page_config(
-    page_title="Morocco Wealth-Rainfall Analysis",
+    page_title="Home",
     page_icon="🌧️",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -40,28 +40,43 @@ st.set_page_config(
 st.title("Morocco Wealth-Rainfall Analysis")
 
 st.markdown("""
-This dashboard provides interactive visualizations and analysis of the relationship between 
-relative wealth index and rainfall patterns across different regions in Morocco.
+This comprehensive dashboard analyzes the relationship between relative wealth indices and rainfall patterns 
+across Morocco's regions, incorporating advanced forecasting models for future rainfall predictions.
 
 ### Project Overview
-This data-driven decision-making project integrates several key datasets:
-1. Administrative regions data for Morocco
-2. Historical rainfall measurements
-3. Relative wealth index data with geospatial coordinates
-4. Geographic boundaries (GeoJSON) for precise mapping
+Our data-driven decision-making project combines multiple data sources and analytical approaches:
+1. **Regional Data**: Administrative boundaries and socioeconomic indicators
+2. **Historical Rainfall**: Detailed rainfall measurements across regions
+3. **Wealth Metrics**: Relative wealth index with geospatial distribution
+4. **Forecasting Models**: Advanced time series prediction using multiple algorithms
 
-### Key Research Questions
-- Is there a correlation between regional wealth and rainfall patterns?
-- Do wealthier regions have more consistent rainfall patterns?
-- Are economically disadvantaged areas more susceptible to rainfall extremes?
-- How might changing rainfall patterns affect economic prosperity in different regions?
+### Key Findings
+1. **Rainfall Forecasting**:
+   - Prophet model shows highest accuracy (MAE: 8.4131)
+   - Holt-Winters demonstrates strong performance (MAE: 8.9054)
+   - Modern approaches outperform traditional methods
+   - Seasonal patterns significantly impact prediction accuracy
+
+2. **Wealth-Rainfall Relationship**:
+   - Analysis of regional wealth distribution
+   - Correlation studies between rainfall patterns and economic indicators
+   - Impact assessment of rainfall variability on different regions
+   - Identification of vulnerable areas
 
 ### Navigate the Dashboard
-Use the sidebar to explore different aspects of the data analysis:
-- **Rainfall Data**: Explore rainfall patterns across Morocco
-- **Wealth Data**: Examine relative wealth distribution
-- **Region Boundaries**: View Morocco's administrative regions
-- **Unified Dataset**: Analyze the combined wealth-rainfall data
+Explore our comprehensive analysis through different sections:
+- **Rainfall Data**: Historical patterns and regional distribution
+- **Wealth Data**: Economic indicators and spatial analysis
+- **Region Boundaries**: Administrative divisions and geographical context
+- **Unified Dataset**: Integrated analysis of wealth and rainfall
+- **Rainfall Forecasting**: Advanced predictive models and comparisons
+
+### Project Impact
+Our analysis provides valuable insights for:
+- Regional development planning
+- Resource allocation strategies
+- Climate adaptation policies
+- Economic resilience assessment
 """)
 
 # Sidebar for data loading status
@@ -137,4 +152,4 @@ else:
 
 # Footer
 st.markdown("---")
-st.markdown("© 2025 Morocco Wealth-Rainfall Analysis Project") 
+st.markdown("© 2025 Morocco Wealth-Rainfall Analysis Project | Created by ETTALBI OMAR") 

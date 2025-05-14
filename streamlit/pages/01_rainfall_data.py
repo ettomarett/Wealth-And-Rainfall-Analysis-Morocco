@@ -421,9 +421,16 @@ with main_tabs[3]:
                             caption=f'Rainfall ({rainfall_column}) (mm)'
                         )
                         
+                        # Convert GeoDataFrame to a format that can be serialized to JSON
+                        geo_data = gdf.copy()
+                        # Convert any datetime columns to string
+                        for col in geo_data.columns:
+                            if pd.api.types.is_datetime64_any_dtype(geo_data[col]):
+                                geo_data[col] = geo_data[col].astype(str)
+                        
                         # Add choropleth layer
                         folium.GeoJson(
-                            gdf.__geo_interface__,
+                            geo_data.__geo_interface__,
                             style_function=lambda feature: {
                                 'fillColor': colormap(feature['properties'][rainfall_column]) 
                                             if feature['properties'][rainfall_column] is not None else 'gray',

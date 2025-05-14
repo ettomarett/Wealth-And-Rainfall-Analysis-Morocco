@@ -1,16 +1,31 @@
 # Morocco Wealth-Rainfall Analysis Dashboard
 
 ## Project Overview
-This project explores the relationship between wealth and rainfall patterns across Morocco's regions. It integrates geospatial, economic, and meteorological data to provide interactive visualizations and data-driven insights for researchers, policymakers, and the public.
+This project explores the relationship between wealth and rainfall patterns across Morocco's regions, incorporating advanced forecasting models for future rainfall predictions. It integrates geospatial, economic, and meteorological data to provide interactive visualizations and data-driven insights for researchers, policymakers, and the public.
+
+## Key Findings
+1. **Rainfall Forecasting**:
+   - Prophet model shows highest accuracy (MAE: 8.4131)
+   - Holt-Winters demonstrates strong performance (MAE: 8.9054)
+   - Modern approaches outperform traditional methods
+   - Seasonal patterns significantly impact prediction accuracy
+
+2. **Wealth-Rainfall Relationship**:
+   - Analysis of regional wealth distribution
+   - Correlation studies between rainfall patterns and economic indicators
+   - Impact assessment of rainfall variability on different regions
+   - Identification of vulnerable areas
 
 ## Features
 - Unified dataset combining wealth and rainfall data at the regional level
 - Interactive Streamlit dashboard with:
   - Rainfall and wealth data exploration
   - Geographic visualizations (choropleth maps, wealth points)
+  - Advanced forecasting models
   - Correlation and seasonal analysis
   - Data dictionary and methodology explanations
 - Efficient data processing pipeline
+- Machine learning models for rainfall prediction
 
 ## Data Sources
 - **Rainfall Data:** Historical rainfall measurements for Moroccan regions
@@ -21,52 +36,88 @@ This project explores the relationship between wealth and rainfall patterns acro
 ```
 ├── process_data.py                # Main data processing script
 ├── processed_data/                # Processed datasets and map data
-├── Datasets/                      # Raw datasets (CSV, GeoJSON)
+│   ├── cleaned_rainfall_data.csv
+│   ├── rainfall_metrics.csv
+│   ├── admin_data.csv
+│   ├── wealth_points_sample.csv
+│   └── unified_dataset.csv
+├── Datasets/                      # Raw datasets
+│   ├── mar-rainfall-adm2-full.csv
+│   ├── morocco_relative_wealth_index.csv
+│   ├── mar_adm2.csv
+│   ├── merged_adm2_data.geojson
+│   └── adm2_with_rwi.geojson
 ├── streamlit/
 │   ├── app.py                     # Main Streamlit app
-│   └── pages/
-│       ├── 01_rainfall_data.py    # Rainfall data exploration
-│       ├── 02_wealth_data.py      # Wealth data exploration
-│       ├── 03_region_boundaries.py# Region boundaries visualization
-│       └── 04_unified_dataset.py  # Unified dataset analysis
-├── docs/                          # Documentation (optional)
+│   └── pages/                     # Dashboard pages
+├── src/
+│   ├── data_processing/
+│   │   ├── cleaning.py           # Data cleaning functions
+│   │   └── geospatial.py         # Geospatial processing
+│   └── models/                    # Forecasting models
+└── requirements.txt               # Project dependencies
 ```
 
-## How to Run
-### 1. Install Requirements
+## Environment Setup
+### 1. Create and Activate Conda Environment
+```bash
+conda create -n dddm_env python=3.10
+conda activate dddm_env
+```
+
+### 2. Install Requirements
 ```bash
 pip install -r requirements.txt
 ```
 
-### 2. Prepare Data
-- Place raw datasets in the `Datasets/` directory (see Data Sources above).
-- Run the data processing script to generate processed files:
+### 3. Prepare Data
+- Place raw datasets in the `Datasets/` directory
+- Run the data processing script:
 ```bash
 python process_data.py
 ```
 
-### 3. Launch the Dashboard
+### 4. Launch the Dashboard
 ```bash
 cd streamlit
 streamlit run app.py
 ```
 
-The dashboard will open in your browser. Use the sidebar to navigate between data views.
+## Key Dependencies
+- streamlit==1.45.1
+- pandas (latest)
+- numpy==2.1.3
+- tensorflow==2.19.0
+- prophet==1.1.6
+- geopandas==1.0.1
+- matplotlib==3.10.0
+- seaborn==0.13.2
 
 ## Usage
-- **Rainfall Data:** Explore rainfall patterns by region and time.
-- **Wealth Data:** Visualize the distribution of wealth points and regional averages.
-- **Region Boundaries:** View administrative boundaries and related statistics.
-- **Unified Dataset:** Analyze the combined wealth-rainfall data, correlations, and seasonal effects.
+- **Home**: Overview of project goals and data status
+- **Rainfall Data**: Explore historical patterns and forecasts
+- **Wealth Data**: Visualize wealth distribution and metrics
+- **Region Boundaries**: Interactive maps and regional statistics
+- **Unified Dataset**: Combined analysis and correlations
 
 ## Troubleshooting
-- If you see missing data warnings, ensure all required files are present in `Datasets/` and `processed_data/`.
-- If the map is slow, only a sample of wealth points is shown for performance.
-- For errors about missing files, rerun `process_data.py` and check file paths.
+- If you see missing data warnings, ensure all required files are present in `Datasets/` and `processed_data/`
+- For map performance issues, the dashboard uses a sampled subset of wealth points
+- Run `python process_data.py` if processed data files are missing
+- Check console logs for detailed error messages
+
+## Project Status
+Current development phase focuses on:
+1. Data Preparation and Validation
+2. Model Development and Testing
+3. Dashboard Enhancement
+4. Documentation and Testing
+
+## Data sources: [The Humanitarian Data Exchange](https://data.humdata.org/).
+
 
 ## Credits
-- Developed by Omar Ettalbi
-- Data sources: [The Humanitarian Data Exchange](https://data.humdata.org/).
-
+- Developed by ETTALBI OMAR
+- © 2025 Morocco Wealth-Rainfall Analysis Project
 ---
-For questions or contributions, please open an issue or pull request. 
+For questions, contributions, or issues, please contact the project maintainers. 

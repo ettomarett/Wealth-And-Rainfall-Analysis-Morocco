@@ -1,0 +1,8 @@
+conda activate dddm_env
+
+pip install -r requirements.txt
+
+cd streamlit
+
+streamlit run app.py
+

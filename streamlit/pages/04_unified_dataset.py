@@ -402,7 +402,7 @@ with tab3:
                             ).add_to(marker_cluster)
                     
                     st.write(f"Combined map: Regions colored by rainfall, points representing wealth data (showing {len(wealth_features_sample)} points)")
-                    st.caption("Note: Zooming in will not increase the number of points, but you can increase the slider value for more detail.")
+                    st.caption("Note: Points are sampled from the full dataset to optimize map performance. Zoom in to see individual points and their clusters.")
                     st_folium(m, width=1000, height=700)
                     
                     # Add explanation about the map
