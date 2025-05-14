@@ -32,31 +32,7 @@ This project explores the relationship between wealth and rainfall patterns acro
 - **Wealth Data:** Relative Wealth Index (RWI) with geospatial coordinates
 - **Administrative Boundaries:** GeoJSON and CSV files for Morocco's regions
 
-## Project Structure
-```
-├── process_data.py                # Main data processing script
-├── processed_data/                # Processed datasets and map data
-│   ├── cleaned_rainfall_data.csv
-│   ├── rainfall_metrics.csv
-│   ├── admin_data.csv
-│   ├── wealth_points_sample.csv
-│   └── unified_dataset.csv
-├── Datasets/                      # Raw datasets
-│   ├── mar-rainfall-adm2-full.csv
-│   ├── morocco_relative_wealth_index.csv
-│   ├── mar_adm2.csv
-│   ├── merged_adm2_data.geojson
-│   └── adm2_with_rwi.geojson
-├── streamlit/
-│   ├── app.py                     # Main Streamlit app
-│   └── pages/                     # Dashboard pages
-├── src/
-│   ├── data_processing/
-│   │   ├── cleaning.py           # Data cleaning functions
-│   │   └── geospatial.py         # Geospatial processing
-│   └── models/                    # Forecasting models
-└── requirements.txt               # Project dependencies
-```
+
 
 ## Environment Setup
 ### 1. Create and Activate Conda Environment
