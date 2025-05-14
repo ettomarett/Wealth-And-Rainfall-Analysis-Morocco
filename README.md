@@ -91,6 +91,11 @@ Current development phase focuses on:
 
 ## Data sources: [The Humanitarian Data Exchange](https://data.humdata.org/).
 
+[Rainfall Data](https://data.humdata.org/dataset/mar-rainfall-subnational).
+[Relative Wealth Index Data](https://data.humdata.org/dataset/relative-wealth-index).
+[Subnational Administrative Boundaries](https://data.humdata.org/dataset/geoboundaries-admin-boundaries-for-morocco).
+
+
 
 ## Credits
 - Developed by ETTALBI OMAR
