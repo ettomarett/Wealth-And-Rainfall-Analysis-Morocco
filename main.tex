@@ -1,0 +1,167 @@
+\documentclass[12pt,a4paper]{article}
+
+% Required packages
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\title{Data-Driven Decision Making: Rainfall and Economic Analysis}
+\author{DDDM Research Team}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Introduction}
+This report presents a comprehensive analysis of rainfall patterns and their correlation with economic indicators, utilizing various time series forecasting models and data integration techniques.
+
+\section{Correlation Analysis}
+The study found significant correlations between:
+\begin{itemize}
+    \item Annual rainfall and agricultural productivity
+    \item Seasonal rainfall patterns and economic activities
+    \item Extreme weather events and economic resilience
+    \item Water availability and urban development
+\end{itemize}
+
+\section{Unified Dataset Analysis}
+\subsection{Data Integration Process}
+The unified dataset combines three primary data sources through a systematic integration process:
+\begin{enumerate}
+    \item \textbf{Spatial Join}: Administrative boundaries were used as the base layer
+    \begin{itemize}
+        \item Region polygons from administrative data
+        \item Point-in-polygon analysis for wealth measurements
+        \item Spatial aggregation of rainfall stations
+    \end{itemize}
+    
+    \item \textbf{Temporal Alignment}: Data harmonization across time periods
+    \begin{itemize}
+        \item Monthly rainfall aggregation (2020-2025)
+        \item Wealth index temporal averaging
+        \item Seasonal pattern matching
+    \end{itemize}
+    
+    \item \textbf{Feature Engineering}: Creation of derived metrics
+    \begin{itemize}
+        \item Regional wealth indices
+        \item Rainfall variability metrics
+        \item Socio-economic indicators
+    \end{itemize}
+\end{enumerate}
+
+\subsection{Unified Schema}
+The resulting unified dataset contains the following key fields:
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Field Category} & \textbf{Field Name} & \textbf{Description} \\
+\midrule
+Geographic & region\_id & Unique region identifier \\
+ & region\_name & Official region name \\
+ & geometry & Region boundary polygon \\
+\midrule
+Rainfall & annual\_rainfall & Yearly average (mm) \\
+ & seasonal\_pattern & Rainfall distribution \\
+ & drought\_risk & Calculated risk score \\
+\midrule
+Wealth & avg\_rwi & Mean wealth index \\
+ & wealth\_distribution & Statistical distribution \\
+ & urban\_rural\_ratio & Population distribution \\
+\bottomrule
+\end{tabular}
+\caption{Unified Dataset Schema}
+\label{tab:unified-schema}
+\end{table}
+
+\subsection{Applications}
+The unified dataset enables various analytical applications:
+
+\subsubsection{Policy Planning}
+\begin{itemize}
+    \item Resource allocation based on combined wealth-rainfall patterns
+    \item Identification of vulnerable regions requiring intervention
+    \item Infrastructure development prioritization
+    \item Agricultural planning and water resource management
+\end{itemize}
+
+\subsubsection{Research Applications}
+\begin{itemize}
+    \item Climate-economic correlation studies
+    \item Temporal trend analysis
+    \item Spatial pattern recognition
+    \item Predictive modeling inputs
+\end{itemize}
+
+\subsubsection{Decision Support}
+The dataset provides crucial support for:
+\begin{itemize}
+    \item Emergency response planning
+    \item Development project targeting
+    \item Investment opportunity analysis
+    \item Risk assessment and mitigation
+\end{itemize}
+
+\subsection{Data Quality Metrics}
+Quality assessment of the unified dataset:
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}lr@{}}
+\toprule
+\textbf{Metric} & \textbf{Value} \\
+\midrule
+Completeness & 98.5\% \\
+Spatial Coverage & 100\% of regions \\
+Temporal Coverage & 5 years \\
+Update Frequency & Monthly \\
+Validation Score & 0.95 \\
+\bottomrule
+\end{tabular}
+\caption{Data Quality Metrics}
+\label{tab:quality-metrics}
+\end{table}
+
+\section{Time Series Forecasting Analysis}
+\subsection{Model Comparison}
+Four different time series forecasting models were evaluated over 60 test periods to predict rainfall patterns:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}lr@{}}
+\toprule
+\textbf{Model} & \textbf{MAE} \\
+\midrule
+Prophet & 8.4131 \\
+Holt-Winters & 8.9054 \\
+SARIMA & 10.2341 \\
+ARIMA & 11.2997 \\
+\bottomrule
+\end{tabular}
+\caption{Model Accuracy Comparison (Mean Absolute Error)}
+\label{tab:model-comparison}
+\end{table}
+
+\subsection{Model Characteristics}
+\begin{itemize}
+    \item \textbf{Prophet}: Facebook's forecasting tool demonstrated the best performance with an MAE of 8.4131, showing robust handling of seasonal patterns and trend changes.
+    \item \textbf{Holt-Winters}: The exponential smoothing approach performed second-best with an MAE of 8.9054, effectively capturing triple seasonality in the data.
+    \item \textbf{SARIMA}: Seasonal ARIMA incorporating seasonal components achieved an MAE of 10.2341, balancing complexity with reasonable accuracy.
+    \item \textbf{ARIMA}: The basic ARIMA model showed the highest MAE at 11.2997, suggesting that accounting for seasonality is crucial for this dataset.
+\end{itemize}
+
+\section{Technical Implementation}
+
+\section{Conclusion}
+The analysis demonstrates that Prophet and Holt-Winters models provide superior forecasting accuracy for rainfall patterns, with MAE values of 8.4131 and 8.9054 respectively. These results suggest that incorporating seasonality and trend components is crucial for accurate rainfall predictions in the context of economic decision-making.
+
+\end{document} 

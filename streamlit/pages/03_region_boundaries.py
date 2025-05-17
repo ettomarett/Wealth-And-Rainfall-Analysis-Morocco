@@ -123,11 +123,17 @@ def create_folium_map(gdf, color_column=None, fill_color='YlOrRd', legend_name='
     center = [31.7917, -7.0926]
     m = folium.Map(location=center, zoom_start=6, tiles='CartoDB positron')
     
+    # Create a copy of the GeoDataFrame and convert datetime columns to strings
+    gdf_copy = gdf.copy()
+    for col in gdf_copy.columns:
+        if pd.api.types.is_datetime64_any_dtype(gdf_copy[col]):
+            gdf_copy[col] = gdf_copy[col].astype(str)
+    
     # Create colormap if color column is provided
-    if color_column and color_column in gdf.columns:
+    if color_column and color_column in gdf_copy.columns:
         # Get min and max values for colormap
-        vmin = gdf[color_column].min()
-        vmax = gdf[color_column].max()
+        vmin = gdf_copy[color_column].min()
+        vmax = gdf_copy[color_column].max()
         
         # Create colormap
         colormap = LinearColormap(
@@ -139,7 +145,7 @@ def create_folium_map(gdf, color_column=None, fill_color='YlOrRd', legend_name='
         
         # Add choropleth layer
         folium.GeoJson(
-            gdf.__geo_interface__,
+            gdf_copy.__geo_interface__,
             style_function=lambda feature: {
                 'fillColor': colormap(feature['properties'][color_column]) 
                              if feature['properties'][color_column] is not None else 'gray',
@@ -159,7 +165,7 @@ def create_folium_map(gdf, color_column=None, fill_color='YlOrRd', legend_name='
     else:
         # Add boundaries without coloring
         folium.GeoJson(
-            gdf.__geo_interface__,
+            gdf_copy.__geo_interface__,
             style_function=lambda feature: {
                 'fillColor': '#3186cc',
                 'color': 'black',
